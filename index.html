@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Justice — Where Law Meets Leadership</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <canvas id="particles-canvas"></canvas>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+
+      <div class="nav-logo" onclick="jilScroll('home')">
+        <div class="logo-circle">J</div>
+        <span class="logo-text">JUSTICE</span>
+      </div>
+
+      <div class="desktop-nav">
+        <span class="nav-link" onclick="jilScroll('home')">Home</span>
+        <span class="nav-link" onclick="jilScroll('about')">About</span>
+        <span class="nav-link" onclick="jilScroll('collaborations')">Collaborations</span>
+        <span class="nav-link" onclick="jilScroll('gallery')">Gallery</span>
+        <span class="nav-link" onclick="jilScroll('events')">Events</span>
+        <span class="nav-link" onclick="jilScroll('team')">Team</span>
+        <span class="nav-link" onclick="jilScroll('testimonials')">Testimonials</span>
+        <span class="nav-link" onclick="jilScroll('contact')">Contact</span>
+      </div>
+
+      <div class="nav-right">
+        <button class="gold-btn" onclick="jilScroll('contact')">Join Justice</button>
+        <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <span class="mobile-link" onclick="jilScroll('home')">Home</span>
+      <span class="mobile-link" onclick="jilScroll('about')">About</span>
+      <span class="mobile-link" onclick="jilScroll('collaborations')">Collaborations</span>
+      <span class="mobile-link" onclick="jilScroll('gallery')">Gallery</span>
+      <span class="mobile-link" onclick="jilScroll('events')">Events</span>
+      <span class="mobile-link" onclick="jilScroll('team')">Team</span>
+      <span class="mobile-link" onclick="jilScroll('testimonials')">Testimonials</span>
+      <span class="mobile-link" onclick="jilScroll('contact')">Contact</span>
+    </div>
+  </nav>
+
+  <section id="home" class="hero-section">
+    <div class="hero-glow"></div>
+    <div class="hero-fade"></div>
+
+    <div class="scales-watermark">
+      <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="sg" cx="50%" cy="50%" r="50%">
+            <stop offset="0%"   stop-color="#C48A4A" stop-opacity="1"/>
+            <stop offset="100%" stop-color="#C48A4A" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <line x1="200" y1="60"  x2="200" y2="320" stroke="url(#sg)" stroke-width="3"/>
+        <circle cx="200" cy="55" r="10" fill="#C48A4A"/>
+        <line x1="100" y1="130" x2="300" y2="130" stroke="#C48A4A" stroke-width="3"/>
+        <line x1="100" y1="130" x2="80"  y2="200" stroke="#C48A4A" stroke-width="2"/>
+        <line x1="300" y1="130" x2="320" y2="200" stroke="#C48A4A" stroke-width="2"/>
+        <ellipse cx="80"  cy="210" rx="40" ry="12" fill="none" stroke="#C48A4A" stroke-width="2"/>
+        <ellipse cx="320" cy="210" rx="40" ry="12" fill="none" stroke="#C48A4A" stroke-width="2"/>
+        <line x1="170" y1="320" x2="230" y2="320" stroke="#C48A4A" stroke-width="3"/>
+        <line x1="185" y1="320" x2="185" y2="340" stroke="#C48A4A" stroke-width="2"/>
+        <line x1="215" y1="320" x2="215" y2="340" stroke="#C48A4A" stroke-width="2"/>
+        <line x1="175" y1="340" x2="225" y2="340" stroke="#C48A4A" stroke-width="2"/>
+      </svg>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">J</div>
+
+      <div class="hero-animate">
+        <div class="hero-eyebrow">Est. 2024 · Youth Legal Excellence</div>
+        <h1 class="hero-title">Justice</h1>
+        <div class="hero-slogan">"Where Law Meets Leadership"</div>
+        <p class="hero-sub">Empowering the next generation of legal minds, debate champions, and policy architects across the globe.</p>
+
+        <div class="hero-btns">
+          <button class="gold-btn hero-cta" onclick="jilScroll('contact')">Join Justice →</button>
+          <button class="outline-btn hero-cta" onclick="jilScroll('events')">Explore Events</button>
+        </div>
+      </div>
+
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-heading">
+        <div class="section-badge">Justice</div>
+        <h2>Empowering Future Legal Leaders</h2>
+        <p>Justice is a youth-driven organization dedicated to bridging the gap between academic law and real-world leadership through debate, mentorship, and civic engagement.</p>
+        <div class="heading-line"></div>
+      </div>
+      <div class="timeline">
+        <div class="timeline-spine"></div>
+        <div id="timeline-items"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="collaborations" class="section section-alt">
+    <div class="container">
+      <div class="section-heading">
+        <div class="section-badge">Justice</div>
+        <h2>Official Collaborations &amp; Partnerships</h2>
+        <p>Building a global network of institutions united by the mission of advancing youth legal education and civic leadership.</p>
+        <div class="heading-line"></div>
+      </div>
+      <div class="collab-grid" id="collab-grid"></div>
+      <div class="stats-grid" id="stats-grid"></div>
+    </div>
+  </section>
+
+  <section id="gallery" class="section">
+    <div class="container">
+      <div class="section-heading">
+        <div class="section-badge">Justice</div>
+        <h2>Cinematic Gallery</h2>
+        <p>Fragments from past debates — moments of argument, tension, and triumph captured across forums and tournaments.</p>
+        <div class="heading-line"></div>
+      </div>
+      <div class="gallery-grid" id="gallery-grid"></div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <div class="lightbox-inner" onclick="event.stopPropagation()">
+      <img id="lightbox-img" src="" alt="" />
+      <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+      <div class="lightbox-body">
+        <div class="lightbox-date" id="lightbox-date"></div>
+        <h3 id="lightbox-title"></h3>
+        <p id="lightbox-desc"></p>
+      </div>
+    </div>
+  </div>
+
+  <section id="events" class="section section-alt">
+    <div class="container">
+      <div class="section-heading">
+        <div class="section-badge">Justice</div>
+        <h2>Upcoming Forums &amp; Tournaments</h2>
+        <p>Mark your calendar. These are the defining events shaping the next generation of legal leaders.</p>
+        <div class="heading-line"></div>
+      </div>
+      <div class="events-grid" id="events-grid"></div>
+    </div>
+  </section>
+
+  <section id="team" class="section">
+    <div class="container">
+      <div class="section-heading">
+        <div class="section-badge">Justice</div>
+        <h2>The Executive Council</h2>
+        <p>The minds and hearts steering Justice toward a future where every young person has access to legal knowledge and leadership.</p>
+        <div class="heading-line"></div>
+      </div>
+      <div class="team-grid" id="team-grid"></div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="section section-alt">
+    <div class="container">
+      <div class="section-heading">
+        <div class="section-badge">Justice</div>
+        <h2>Voices of Justice</h2>
+        <p>Hear from the leaders, advocates, and scholars whose paths were shaped inside Justice.</p>
+        <div class="heading-line"></div>
+      </div>
+      <div class="testimonials-grid" id="testimonials-grid"></div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container container-narrow">
+      <div class="section-heading">
+        <div class="section-badge">Justice</div>
+        <h2>Join the Movement</h2>
+        <p>Whether you're a student, mentor, institution, or advocate — there's a place for you inside Justice.</p>
+        <div class="heading-line"></div>
+      </div>
+
+      <div class="contact-grid">
+        <form id="contact-form" onsubmit="event.preventDefault(); submitForm();" class="glass-card contact-form-card">
+          <h3 class="card-title">Send Us a Message</h3>
+
+          <div class="form-group">
+            <label for="form-name">Full Name</label>
+            <input type="text" id="form-name" name="name" placeholder="Your full name" class="form-input" required />
+          </div>
+          <div class="form-group">
+            <label for="form-email">Email Address</label>
+            <input type="email" id="form-email" name="email" placeholder="your@email.com" class="form-input" required />
+          </div>
+          <div class="form-group">
+            <label for="form-org">Institution / Organization</label>
+            <input type="text" id="form-org" name="organization" placeholder="University or organization name" class="form-input" />
+          </div>
+          <div class="form-group">
+            <label for="form-msg">Message</label>
+            <textarea id="form-msg" name="message" rows="5" placeholder="Tell us about yourself and why you'd like to join Justice..." class="form-input form-textarea" required></textarea>
+          </div>
+
+          <button type="submit" class="gold-btn full-width">Submit Application →</button>
+          <div id="form-feedback" class="form-feedback" style="margin-top:16px; min-height:24px;"></div>
+        </form>
+
+        <div class="contact-info">
+          <div class="glass-card contact-info-item">
+            <span class="contact-icon">✉️</span>
+            <div>
+              <div class="contact-label">Email</div>
+              <div class="contact-value">miralievhasan347@gmail.com</div>
+            </div>
+          </div>
+          <div class="glass-card contact-info-item">
+            <span class="contact-icon">📍</span>
+            <div>
+              <div class="contact-label">Address</div>
+              <div class="contact-value">Uzbekistan, Tashkent</div>
+            </div>
+          </div>
+
+          <div class="glass-card socials-card">
+            <div class="contact-label" style="margin-bottom:16px">Follow Justice</div>
+            <div class="socials-row">
+              <button type="button" class="social-btn" onclick="openSocial('https://www.instagram.com/justice_debate?igsh=eHR4dG13d3VzcGR6')">Instagram</button>
+              <button type="button" class="social-btn" onclick="openSocial('https://t.me/jildebate')">Telegram</button>
+              <button type="button" class="social-btn" onclick="openSocial('https://x.com/Justice_debate')">Twitter / X</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo" onclick="jilScroll('home')" style="cursor:pointer">
+      <div class="logo-circle logo-circle-sm">J</div>
+      <span class="footer-name">JUSTICE</span>
+    </div>
+    <p class="footer-slogan">"Where Law Meets Leadership"</p>
+    <p class="footer-copy">© <span id="footer-year"></span> Justice. All rights reserved. Crafted with excellence.</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
