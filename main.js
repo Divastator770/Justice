@@ -104,8 +104,8 @@ const TRANSLATIONS = {
     team_title: "The Executive Council",
     team_desc:  "The minds and hearts steering Justice toward a future where every young person has access to legal knowledge and leadership.",
     t0_name: "Umar Rustamov",      t0_role: "Founder & President",     t0_dept: "Executive",    t0_bio: "Founder of Justice and representative in global market.",
-    t1_name: "Xasan Miraliev",     t1_role: "Vice President",           t1_dept: "Executive",    t1_bio: "International tech-specialist. Leads Justice's global partnership and institutional outreach programs.",
-    t2_name: "Bekhruz Fayzullaev", t2_role: "Director of Competitions", t2_dept: "Competitions", t2_bio: "3x national debate champion. Designs and administers all Justice tournament formats and judging criteria.",
+    t1_name: "Xasan Miraliev",     t1_role: "Vice President",           t1_dept: "Executive",    t1_bio: "Oversees Justice's strategic operations and institutional development. Bridges the organization's internal teams with external partners, ensuring every initiative is executed with precision and long-term vision.",
+    t2_name: "Bekhruz Fayzullaev", t2_role: "Director of Competitions", t2_dept: "Competitions", t2_bio: "Architects the competitive backbone of Justice — designing tournament formats, setting judging standards, and ensuring every event challenges participants to reach their highest potential.",
 
     /* TESTIMONIALS */
     test_badge: "Justice",
@@ -176,7 +176,7 @@ const TRANSLATIONS = {
     about_desc:    "Justice — munozara, murabbiylik va fuqarolik ishtirokchiligi orqali akademik huquq va real hayotdagi rahbarlik o'rtasidagi bo'shliqni to'ldirish uchun tashkil etilgan yoshlar tashkiloti.",
 
     m0_title: "Asos solindi",
-    m0_desc:  "Justice yoshlarni huquqiy ta'limga jalb etish missiyasida qoʻshimcha ishtiyoqli huquq talabalari tomonidan tashkil etildi.",
+    m0_desc:  "Justice yoshlarni huquqiy ta'limga jalb etish missiyasida qo'shimcha ishtiyoqli huquq talabalari tomonidan tashkil etildi.",
     m1_title: "Birinchi Turnir",
     m1_desc:  "Turli muassasalardan 100+ ishtirokchi bilan Birinchi Munozara Turniri o'tkazildi.",
     m2_title: "Vazirlik Hamkorligi",
@@ -242,9 +242,9 @@ const TRANSLATIONS = {
     team_badge: "Justice",
     team_title: "Ijroiya Kengash",
     team_desc:  "Justice'ni har bir yosh insonning huquqiy bilim va yetakchilikka ega bo'lishi mumkin bo'lgan kelajak sari yo'naltiruvchi aqllar va yuraklar.",
-    t0_name: "Umar Rustamov",      t0_role: "Muassis va Prezident",       t0_dept: "Ijroiya",    t0_bio: "Justice muassisi va global bozordagi vakili.",
-    t1_name: "Xasan Miraliev",     t1_role: "Vitse-Prezident",             t1_dept: "Ijroiya",    t1_bio: "Xalqaro texnologiya mutaxassisi. Justice'ning global hamkorlik va institutsional aloqa dasturlarini boshqaradi.",
-    t2_name: "Bekhruz Fayzullaev", t2_role: "Musobaqalar bo'yicha direktor", t2_dept: "Musobaqalar", t2_bio: "3 marta milliy munozara chempioni. Barcha Justice turnir formatlarini va hakamlik mezonlarini ishlab chiqadi va boshqaradi.",
+    t0_name: "Umar Rustamov",      t0_role: "Muassis va Prezident",         t0_dept: "Ijroiya",       t0_bio: "Justice muassisi va global bozordagi vakili.",
+    t1_name: "Xasan Miraliev",     t1_role: "Vitse-Prezident",               t1_dept: "Ijroiya",       t1_bio: "Justice'ning strategik operatsiyalari va institutsional rivojlanishini boshqaradi. Tashkilot ichki jamoalari va tashqi hamkorlar o'rtasida ko'prik vazifasini bajarib, har bir tashabbus aniqlik va uzoq muddatli nuqtai nazar bilan amalga oshirilishini ta'minlaydi.",
+    t2_name: "Bekhruz Fayzullaev", t2_role: "Musobaqalar bo'yicha direktor", t2_dept: "Musobaqalar",   t2_bio: "Justice'ning musobaqa asosini shakllantiradi — turnir formatlarini ishlab chiqadi, hakamlik standartlarini belgilaydi va har bir tadbir ishtirokchilarni eng yuqori salohiyatlariga erishishga undashini ta'minlaydi.",
 
     test_badge: "Justice",
     test_title: "Justice Ovozlari",
@@ -378,8 +378,8 @@ const TRANSLATIONS = {
     team_title: "Исполнительный Совет",
     team_desc:  "Умы и сердца, направляющие Justice к будущему, в котором каждый молодой человек имеет доступ к правовым знаниям и лидерству.",
     t0_name: "Умар Рустамов",        t0_role: "Основатель и Президент",       t0_dept: "Исполнительный",  t0_bio: "Основатель Justice и представитель на глобальном рынке.",
-    t1_name: "Хасан Миралиев",       t1_role: "Вице-президент",               t1_dept: "Исполнительный",  t1_bio: "Международный технический специалист. Руководит глобальным партнёрством и институциональными программами охвата Justice.",
-    t2_name: "Бехруз Файзуллаев",    t2_role: "Директор по соревнованиям",    t2_dept: "Соревнования",    t2_bio: "3-кратный национальный чемпион по дебатам. Разрабатывает и администрирует все форматы турниров Justice и критерии судейства.",
+    t1_name: "Хасан Миралиев",       t1_role: "Вице-президент",               t1_dept: "Исполнительный",  t1_bio: "Курирует стратегические операции и институциональное развитие Justice. Связывает внутренние команды организации с внешними партнёрами, обеспечивая реализацию каждой инициативы с точностью и долгосрочным видением.",
+    t2_name: "Бехруз Файзуллаев",    t2_role: "Директор по соревнованиям",    t2_dept: "Соревнования",    t2_bio: "Формирует соревновательную основу Justice — разрабатывает форматы турниров, устанавливает стандарты судейства и следит за тем, чтобы каждое мероприятие побуждало участников раскрывать свой высший потенциал.",
 
     test_badge: "Justice",
     test_title: "Голоса Justice",
