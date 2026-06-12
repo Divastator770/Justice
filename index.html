@@ -8,6 +8,46 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Language Switcher styles (self-contained) -->
+  <style>
+    /* ── LANGUAGE SWITCHER ── */
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(196,138,74,0.08);
+      border: 1px solid rgba(196,138,74,0.25);
+      border-radius: 50px;
+      padding: 3px;
+    }
+    .lang-btn {
+      background: none;
+      border: none;
+      color: rgba(231,198,160,0.55);
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      padding: 5px 10px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background 0.25s, color 0.25s;
+      line-height: 1;
+    }
+    .lang-btn.active {
+      background: linear-gradient(135deg, #C48A4A, #D8A15B);
+      color: #2A120A;
+    }
+    .lang-btn:hover:not(.active) {
+      color: #E7C6A0;
+      background: rgba(196,138,74,0.12);
+    }
+    /* hide switcher label on very small screens */
+    @media (max-width: 360px) {
+      .lang-btn { padding: 4px 7px; font-size: 0.62rem; }
+    }
+  </style>
 </head>
 <body>
 
@@ -22,18 +62,25 @@
       </div>
 
       <div class="desktop-nav">
-        <span class="nav-link" onclick="jilScroll('home')">Home</span>
-        <span class="nav-link" onclick="jilScroll('about')">About</span>
-        <span class="nav-link" onclick="jilScroll('collaborations')">Collaborations</span>
-        <span class="nav-link" onclick="jilScroll('gallery')">Gallery</span>
-        <span class="nav-link" onclick="jilScroll('events')">Events</span>
-        <span class="nav-link" onclick="jilScroll('team')">Team</span>
-        <span class="nav-link" onclick="jilScroll('testimonials')">Testimonials</span>
-        <span class="nav-link" onclick="jilScroll('contact')">Contact</span>
+        <span class="nav-link" onclick="jilScroll('home')"     data-i18n="nav_home">Home</span>
+        <span class="nav-link" onclick="jilScroll('about')"    data-i18n="nav_about">About</span>
+        <span class="nav-link" onclick="jilScroll('collaborations')" data-i18n="nav_collaborations">Collaborations</span>
+        <span class="nav-link" onclick="jilScroll('gallery')"  data-i18n="nav_gallery">Gallery</span>
+        <span class="nav-link" onclick="jilScroll('events')"   data-i18n="nav_events">Events</span>
+        <span class="nav-link" onclick="jilScroll('team')"     data-i18n="nav_team">Team</span>
+        <span class="nav-link" onclick="jilScroll('testimonials')" data-i18n="nav_testimonials">Testimonials</span>
+        <span class="nav-link" onclick="jilScroll('contact')"  data-i18n="nav_contact">Contact</span>
       </div>
 
       <div class="nav-right">
-        <button class="gold-btn" onclick="jilScroll('contact')">Join Justice</button>
+        <!-- Language switcher -->
+        <div class="lang-switcher" aria-label="Language selector">
+          <button class="lang-btn active" data-lang="en" onclick="switchLang('en')">EN</button>
+          <button class="lang-btn"        data-lang="uz" onclick="switchLang('uz')">UZ</button>
+          <button class="lang-btn"        data-lang="ru" onclick="switchLang('ru')">RU</button>
+        </div>
+
+        <button class="gold-btn" onclick="jilScroll('contact')" data-i18n="nav_join">Join Justice</button>
         <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
           <span></span><span></span><span></span>
         </button>
@@ -41,17 +88,26 @@
     </div>
 
     <div class="mobile-menu" id="mobile-menu">
-      <span class="mobile-link" onclick="jilScroll('home')">Home</span>
-      <span class="mobile-link" onclick="jilScroll('about')">About</span>
-      <span class="mobile-link" onclick="jilScroll('collaborations')">Collaborations</span>
-      <span class="mobile-link" onclick="jilScroll('gallery')">Gallery</span>
-      <span class="mobile-link" onclick="jilScroll('events')">Events</span>
-      <span class="mobile-link" onclick="jilScroll('team')">Team</span>
-      <span class="mobile-link" onclick="jilScroll('testimonials')">Testimonials</span>
-      <span class="mobile-link" onclick="jilScroll('contact')">Contact</span>
+      <!-- Language switcher inside mobile menu -->
+      <div style="display:flex;justify-content:center;padding:12px 0 8px;">
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="en" onclick="switchLang('en')">EN</button>
+          <button class="lang-btn"        data-lang="uz" onclick="switchLang('uz')">UZ</button>
+          <button class="lang-btn"        data-lang="ru" onclick="switchLang('ru')">RU</button>
+        </div>
+      </div>
+      <span class="mobile-link" onclick="jilScroll('home')"           data-i18n="nav_home">Home</span>
+      <span class="mobile-link" onclick="jilScroll('about')"          data-i18n="nav_about">About</span>
+      <span class="mobile-link" onclick="jilScroll('collaborations')" data-i18n="nav_collaborations">Collaborations</span>
+      <span class="mobile-link" onclick="jilScroll('gallery')"        data-i18n="nav_gallery">Gallery</span>
+      <span class="mobile-link" onclick="jilScroll('events')"         data-i18n="nav_events">Events</span>
+      <span class="mobile-link" onclick="jilScroll('team')"           data-i18n="nav_team">Team</span>
+      <span class="mobile-link" onclick="jilScroll('testimonials')"   data-i18n="nav_testimonials">Testimonials</span>
+      <span class="mobile-link" onclick="jilScroll('contact')"        data-i18n="nav_contact">Contact</span>
     </div>
   </nav>
 
+  <!-- ════════════ HERO ════════════ -->
   <section id="home" class="hero-section">
     <div class="hero-glow"></div>
     <div class="hero-fade"></div>
@@ -82,14 +138,14 @@
       <div class="hero-badge">J</div>
 
       <div class="hero-animate">
-        <div class="hero-eyebrow">Est. 2024 · Youth Legal Excellence</div>
+        <div class="hero-eyebrow" data-i18n="hero_eyebrow">Est. 2024 · Youth Legal Excellence</div>
         <h1 class="hero-title">Justice</h1>
-        <div class="hero-slogan">"Where Law Meets Leadership"</div>
-        <p class="hero-sub">Empowering the next generation of legal minds, debate champions, and policy architects across the globe.</p>
+        <div class="hero-slogan" data-i18n="hero_slogan">"Where Law Meets Leadership"</div>
+        <p class="hero-sub" data-i18n="hero_sub">Empowering the next generation of legal minds, debate champions, and policy architects across the globe.</p>
 
         <div class="hero-btns">
-          <button class="gold-btn hero-cta" onclick="jilScroll('contact')">Join Justice →</button>
-          <button class="outline-btn hero-cta" onclick="jilScroll('events')">Explore Events</button>
+          <button class="gold-btn hero-cta" onclick="jilScroll('contact')" data-i18n="hero_cta">Join Justice →</button>
+          <button class="outline-btn hero-cta" onclick="jilScroll('events')" data-i18n="hero_events">Explore Events</button>
         </div>
       </div>
 
@@ -97,12 +153,13 @@
     </div>
   </section>
 
+  <!-- ════════════ ABOUT ════════════ -->
   <section id="about" class="section">
     <div class="container">
       <div class="section-heading">
-        <div class="section-badge">Justice</div>
-        <h2>Empowering Future Legal Leaders</h2>
-        <p>Justice is a youth-driven organization dedicated to bridging the gap between academic law and real-world leadership through debate, mentorship, and civic engagement.</p>
+        <div class="section-badge" data-i18n="about_badge">Justice</div>
+        <h2 data-i18n="about_title">Empowering Future Legal Leaders</h2>
+        <p data-i18n="about_desc">Justice is a youth-driven organization dedicated to bridging the gap between academic law and real-world leadership through debate, mentorship, and civic engagement.</p>
         <div class="heading-line"></div>
       </div>
       <div class="timeline">
@@ -112,12 +169,13 @@
     </div>
   </section>
 
+  <!-- ════════════ COLLABORATIONS ════════════ -->
   <section id="collaborations" class="section section-alt">
     <div class="container">
       <div class="section-heading">
-        <div class="section-badge">Justice</div>
-        <h2>Official Collaborations &amp; Partnerships</h2>
-        <p>Building a global network of institutions united by the mission of advancing youth legal education and civic leadership.</p>
+        <div class="section-badge" data-i18n="collab_badge">Justice</div>
+        <h2 data-i18n="collab_title">Official Collaborations &amp; Partnerships</h2>
+        <p data-i18n="collab_desc">Building a global network of institutions united by the mission of advancing youth legal education and civic leadership.</p>
         <div class="heading-line"></div>
       </div>
       <div class="collab-grid" id="collab-grid"></div>
@@ -125,12 +183,13 @@
     </div>
   </section>
 
+  <!-- ════════════ GALLERY ════════════ -->
   <section id="gallery" class="section">
     <div class="container">
       <div class="section-heading">
-        <div class="section-badge">Justice</div>
-        <h2>Cinematic Gallery</h2>
-        <p>Fragments from past debates — moments of argument, tension, and triumph captured across forums and tournaments.</p>
+        <div class="section-badge" data-i18n="gallery_badge">Justice</div>
+        <h2 data-i18n="gallery_title">Cinematic Gallery</h2>
+        <p data-i18n="gallery_desc">Fragments from past debates — moments of argument, tension, and triumph captured across forums and tournaments.</p>
         <div class="heading-line"></div>
       </div>
       <div class="gallery-grid" id="gallery-grid"></div>
@@ -149,73 +208,81 @@
     </div>
   </div>
 
+  <!-- ════════════ EVENTS ════════════ -->
   <section id="events" class="section section-alt">
     <div class="container">
       <div class="section-heading">
-        <div class="section-badge">Justice</div>
-        <h2>Upcoming Forums &amp; Tournaments</h2>
-        <p>Mark your calendar. These are the defining events shaping the next generation of legal leaders.</p>
+        <div class="section-badge" data-i18n="events_badge">Justice</div>
+        <h2 data-i18n="events_title">Upcoming Forums &amp; Tournaments</h2>
+        <p data-i18n="events_desc">Mark your calendar. These are the defining events shaping the next generation of legal leaders.</p>
         <div class="heading-line"></div>
       </div>
       <div class="events-grid" id="events-grid"></div>
     </div>
   </section>
 
+  <!-- ════════════ TEAM ════════════ -->
   <section id="team" class="section">
     <div class="container">
       <div class="section-heading">
-        <div class="section-badge">Justice</div>
-        <h2>The Executive Council</h2>
-        <p>The minds and hearts steering Justice toward a future where every young person has access to legal knowledge and leadership.</p>
+        <div class="section-badge" data-i18n="team_badge">Justice</div>
+        <h2 data-i18n="team_title">The Executive Council</h2>
+        <p data-i18n="team_desc">The minds and hearts steering Justice toward a future where every young person has access to legal knowledge and leadership.</p>
         <div class="heading-line"></div>
       </div>
       <div class="team-grid" id="team-grid"></div>
     </div>
   </section>
 
+  <!-- ════════════ TESTIMONIALS ════════════ -->
   <section id="testimonials" class="section section-alt">
     <div class="container">
       <div class="section-heading">
-        <div class="section-badge">Justice</div>
-        <h2>Voices of Justice</h2>
-        <p>Hear from the leaders, advocates, and scholars whose paths were shaped inside Justice.</p>
+        <div class="section-badge" data-i18n="test_badge">Justice</div>
+        <h2 data-i18n="test_title">Voices of Justice</h2>
+        <p data-i18n="test_desc">Hear from the leaders, advocates, and scholars whose paths were shaped inside Justice.</p>
         <div class="heading-line"></div>
       </div>
       <div class="testimonials-grid" id="testimonials-grid"></div>
     </div>
   </section>
 
+  <!-- ════════════ CONTACT ════════════ -->
   <section id="contact" class="section">
     <div class="container container-narrow">
       <div class="section-heading">
-        <div class="section-badge">Justice</div>
-        <h2>Join the Movement</h2>
-        <p>Whether you're a student, mentor, institution, or advocate — there's a place for you inside Justice.</p>
+        <div class="section-badge" data-i18n="contact_badge">Justice</div>
+        <h2 data-i18n="contact_title">Join the Movement</h2>
+        <p data-i18n="contact_desc">Whether you're a student, mentor, institution, or advocate — there's a place for you inside Justice.</p>
         <div class="heading-line"></div>
       </div>
 
       <div class="contact-grid">
         <form id="contact-form" onsubmit="event.preventDefault(); submitForm();" class="glass-card contact-form-card">
-          <h3 class="card-title">Send Us a Message</h3>
+          <h3 class="card-title" data-i18n="form_title">Send Us a Message</h3>
 
           <div class="form-group">
-            <label for="form-name">Full Name</label>
-            <input type="text" id="form-name" name="name" placeholder="Your full name" class="form-input" required />
+            <label for="form-name" data-i18n="form_name">Full Name</label>
+            <input type="text" id="form-name" name="name" class="form-input" required
+                   data-i18n-ph="form_name_ph" placeholder="Your full name" />
           </div>
           <div class="form-group">
-            <label for="form-email">Email Address</label>
-            <input type="email" id="form-email" name="email" placeholder="your@email.com" class="form-input" required />
+            <label for="form-email" data-i18n="form_email">Email Address</label>
+            <input type="email" id="form-email" name="email" class="form-input" required
+                   data-i18n-ph="form_email_ph" placeholder="your@email.com" />
           </div>
           <div class="form-group">
-            <label for="form-org">Institution / Organization</label>
-            <input type="text" id="form-org" name="organization" placeholder="University or organization name" class="form-input" />
+            <label for="form-org" data-i18n="form_org">Institution / Organization</label>
+            <input type="text" id="form-org" name="organization" class="form-input"
+                   data-i18n-ph="form_org_ph" placeholder="University or organization name" />
           </div>
           <div class="form-group">
-            <label for="form-msg">Message</label>
-            <textarea id="form-msg" name="message" rows="5" placeholder="Tell us about yourself and why you'd like to join Justice..." class="form-input form-textarea" required></textarea>
+            <label for="form-msg" data-i18n="form_msg">Message</label>
+            <textarea id="form-msg" name="message" rows="5" class="form-input form-textarea" required
+                      data-i18n-ph="form_msg_ph" placeholder="Tell us about yourself..."></textarea>
           </div>
 
-          <button type="submit" class="gold-btn full-width">Submit Application →</button>
+          <button type="submit" class="gold-btn full-width" data-i18n="form_submit">Submit Application →</button>
           <div id="form-feedback" class="form-feedback" style="margin-top:16px; min-height:24px;"></div>
         </form>
 
@@ -223,24 +290,37 @@
           <div class="glass-card contact-info-item">
             <span class="contact-icon">✉️</span>
             <div>
-              <div class="contact-label">Email</div>
+              <div class="contact-label" data-i18n="contact_email_label">Email</div>
               <div class="contact-value">miralievhasan347@gmail.com</div>
             </div>
           </div>
           <div class="glass-card contact-info-item">
             <span class="contact-icon">📍</span>
             <div>
-              <div class="contact-label">Address</div>
-              <div class="contact-value">Uzbekistan, Tashkent</div>
+              <div class="contact-label" data-i18n="contact_address_label">Address</div>
+              <div class="contact-value" data-i18n="contact_address_value">Uzbekistan, Tashkent</div>
             </div>
           </div>
 
           <div class="glass-card socials-card">
-            <div class="contact-label" style="margin-bottom:16px">Follow Justice</div>
+            <div class="contact-label" style="margin-bottom:16px" data-i18n="socials_label">Follow Justice</div>
             <div class="socials-row">
-              <button type="button" class="social-btn" onclick="openSocial('https://www.instagram.com/justice_debate?igsh=eHR4dG13d3VzcGR6')">Instagram</button>
-              <button type="button" class="social-btn" onclick="openSocial('https://t.me/jildebate')">Telegram</button>
-              <button type="button" class="social-btn" onclick="openSocial('https://x.com/Justice_debate')">Twitter / X</button>
+              <button type="button" class="social-btn"
+                      onclick="openSocial('https://www.instagram.com/justice_debate?igsh=eHR4dG13d3VzcGR6')"
+                      data-i18n="social_instagram">Instagram</button>
+
+              <button type="button" class="social-btn"
+                      onclick="openSocial('https://t.me/jildebate')"
+                      data-i18n="social_telegram">Telegram</button>
+
+              <button type="button" class="social-btn"
+                      onclick="openSocial('https://x.com/Justice_debate')"
+                      data-i18n="social_twitter">Twitter / X</button>
+
+              <!-- ★ NEW: Telegram Bot button -->
+              <button type="button" class="social-btn social-btn-bot"
+                      onclick="openSocial('https://t.me/JILdebate_bot')"
+                      data-i18n="social_bot">Telegram Bot</button>
             </div>
           </div>
         </div>
@@ -248,13 +328,14 @@
     </div>
   </section>
 
+  <!-- ════════════ FOOTER ════════════ -->
   <footer>
     <div class="footer-logo" onclick="jilScroll('home')" style="cursor:pointer">
       <div class="logo-circle logo-circle-sm">J</div>
       <span class="footer-name">JUSTICE</span>
     </div>
-    <p class="footer-slogan">"Where Law Meets Leadership"</p>
-    <p class="footer-copy">© <span id="footer-year"></span> Justice. All rights reserved. Crafted with excellence.</p>
+    <p class="footer-slogan" data-i18n="footer_slogan">"Where Law Meets Leadership"</p>
+    <p class="footer-copy" data-i18n="footer_copy">© <span id="footer-year"></span> Justice. All rights reserved. Crafted with excellence.</p>
   </footer>
 
   <script src="main.js"></script>
