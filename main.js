@@ -752,10 +752,12 @@ function startCountdown(id, dateStr) {
 /* ══════════════════════════════════════════════════════════
    RENDER — TEAM
    ══════════════════════════════════════════════════════════ */
+
+// Xasan | Umar (center) | Bekhruz
 const teamMeta = [
-  { nameKey:"t0_name", roleKey:"t0_role", deptKey:"t0_dept", bioKey:"t0_bio", initials:"UR", color:"#C48A4A" },
-  { nameKey:"t1_name", roleKey:"t1_role", deptKey:"t1_dept", bioKey:"t1_bio", initials:"XM", color:"#8B6914" },
-  { nameKey:"t2_name", roleKey:"t2_role", deptKey:"t2_dept", bioKey:"t2_bio", initials:"BF", color:"#A07830" },
+  { nameKey:"t1_name", roleKey:"t1_role", deptKey:"t1_dept", bioKey:"t1_bio", initials:"XM", color:"#8B6914", isFounder: false },
+  { nameKey:"t0_name", roleKey:"t0_role", deptKey:"t0_dept", bioKey:"t0_bio", initials:"UR", color:"#C48A4A", isFounder: true  },
+  { nameKey:"t2_name", roleKey:"t2_role", deptKey:"t2_dept", bioKey:"t2_bio", initials:"BF", color:"#A07830", isFounder: false },
 ];
 
 function renderTeam() {
@@ -769,9 +771,9 @@ function renderTeam() {
                   box-shadow:0 0 20px ${m.color}40">
         ${m.initials}
       </div>
-      <div class="team-dept">${t(m.deptKey)}</div>
+      ${m.isFounder ? `<div class="team-dept">${t(m.deptKey)}</div>` : ""}
       <h3 class="team-name">${t(m.nameKey)}</h3>
-      <div class="team-role">${t(m.roleKey)}</div>
+      ${m.isFounder ? `<div class="team-role">${t(m.roleKey)}</div>` : ""}
       <p class="team-bio">${t(m.bioKey)}</p>
     </div>`).join("");
 
